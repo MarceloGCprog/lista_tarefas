@@ -23,11 +23,7 @@ class meuApp extends StatefulWidget {
 class _meuAppState extends State<meuApp> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        title: "Lista de Tarefas",
-        home: Scaffold(
-            appBar: AppBar(title: Text("Titulo"), centerTitle: true),
-            body: Text("CARALHO!")));
+    return MaterialApp(title: "Lista de Tarefas", home: telaInicial());
   }
 }
 
@@ -51,9 +47,24 @@ Future<String> readData() async {
   }
 }
 
-/*Widget telaInicial() {
-  return SingleChildScrollView(
-      child: Scaffold(
-          appBar: AppBar(title: Text("Titulo"), centerTitle: true),
-          body: Text("CARALHO!")));
-}*/
+Widget telaInicial() {
+  return Scaffold(
+      appBar: AppBar(title: Text("Lista de Tarefas"), centerTitle: true),
+      body: Column(
+        children: [
+          Container(
+              padding: EdgeInsets.fromLTRB(15, 5, 5, 5),
+              child: Row(children: [
+                Expanded(
+                    child: TextField(
+                  decoration: InputDecoration(
+                      labelText: "Digite a nova tarefa",
+                      labelStyle:
+                          TextStyle(color: Colors.blueAccent, fontSize: 25.0)),
+                )),
+                ElevatedButton(onPressed: () {}, child: Text("ADD"))
+              ])),
+          //Expanded(child: ListView.builder(itemBuilder: )),
+        ],
+      ));
+}
