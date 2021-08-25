@@ -25,9 +25,9 @@ class _meuAppState extends State<meuApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
         title: "Lista de Tarefas",
-        home: Container(
-          color: Colors.blueAccent,
-        ));
+        home: Scaffold(
+            appBar: AppBar(title: Text("Titulo"), centerTitle: true),
+            body: Text("CARALHO!")));
   }
 }
 
@@ -50,3 +50,10 @@ Future<String> readData() async {
     return "";
   }
 }
+
+/*Widget telaInicial() {
+  return SingleChildScrollView(
+      child: Scaffold(
+          appBar: AppBar(title: Text("Titulo"), centerTitle: true),
+          body: Text("CARALHO!")));
+}*/
