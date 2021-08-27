@@ -29,6 +29,7 @@ class _meuAppState extends State<meuApp> {
       mapLista["texto"] = controLista.text;
       mapLista["check"] = false;
       lisTarefas.add(mapLista);
+      saveData();
       controLista.text = "";
     });
   }
@@ -71,6 +72,7 @@ class _meuAppState extends State<meuApp> {
                   onChanged: (c) {
                     setState(() {
                       lisTarefas[index]["check"] = c;
+                      saveData();
                     });
                   });
             },
