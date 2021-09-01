@@ -62,19 +62,20 @@ class _meuAppState extends State<meuApp> {
             itemCount: lisTarefas.length,
             itemBuilder: (context, index) {
               return CheckboxListTile(
-                  secondary: CircleAvatar(
-                    child: Icon(
-                        lisTarefas[index]["check"] ? Icons.check : Icons.error),
-                  ),
-                  title: Text(lisTarefas[index]["texto"]),
-                  //controlAffinity: ListTileControlAffinity.leading,
-                  value: lisTarefas[index]["check"],
-                  onChanged: (c) {
-                    setState(() {
-                      lisTarefas[index]["check"] = c;
-                      saveData();
-                    });
+                secondary: CircleAvatar(
+                  child: Icon(
+                      lisTarefas[index]["check"] ? Icons.check : Icons.error),
+                ),
+                title: Text(lisTarefas[index]["texto"]),
+                //controlAffinity: ListTileControlAffinity.leading,
+                value: lisTarefas[index]["check"],
+                onChanged: (c) {
+                  setState(() {
+                    lisTarefas[index]["check"] = c;
+                    saveData();
                   });
+                },
+              );
             },
           ))
         ]));
